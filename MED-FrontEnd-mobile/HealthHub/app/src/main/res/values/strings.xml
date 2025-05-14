@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MedMaroc</string>
+    <string-array name="localities">
+        <item>Casablanca</item>
+        <item>Rabat</item>
+        <item>Marrakech</item>
+        <item>Fès</item>
+        <item>Tanger</item>
+        <item>Agadir</item>
+    </string-array>
+</resources>

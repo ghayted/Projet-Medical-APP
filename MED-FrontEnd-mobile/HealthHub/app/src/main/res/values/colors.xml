@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="green_500">#4CAF50</color>    <!-- button -->
+    <color name="gray">#888888</color> <!-- Or any shade you prefer -->
+    <color name="hint_gray">#666666</color> <!-- gris foncé lisible -->
+</resources>

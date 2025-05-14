@@ -1,0 +1,451 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  /* Dashboard container */
+  .dashboard-container {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+  }
+  
+
+  .dashboard-content {
+    padding: 0;
+    height: 100%;
+  }
+  
+
+  
+  .dashboard-layout {
+    display: flex;
+    gap: 20px;
+    height: 100%;
+  }
+  
+  /* Tabs */
+  .tabs {
+    display: flex;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  
+  .tab {
+    padding: 10px 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 14px;
+    flex: 1;
+    text-align: center;
+  }
+  
+  .tab.active {
+    background-color: #fff;
+    font-weight: bold;
+    color: #4caf50;
+  }
+  
+  /* Consultations list */
+  .consultations-list-container {
+    width: 40%;
+    min-width: 300px;
+    height: 100%;
+    overflow-y: auto;
+  }
+  
+  .list-title {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  
+  .consultations-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .consultation-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    transition: all 0.2s ease;
+  }
+  
+  .consultation-item:hover,
+  .consultation-item.selected {
+    border-color: #4caf50;
+  }
+  
+  .consultation-item.selected {
+    border-left: 3px solid #4caf50;
+  }
+  
+  .patient-name {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .patient-age {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .consultation-time {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #666;
+    font-size: 13px;
+  }
+  
+  .icon {
+    color: #666;
+  }
+  
+  .status-badge {
+    background-color: #fff9c4;
+    color: #f57f17;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  /* Consultation detail */
+  .consultation-detail {
+    flex: 1;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .patient-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .detail-patient-name {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .detail-patient-info {
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .btn-accept,
+  .btn-decline {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .btn-accept {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .btn-decline {
+    background-color: white;
+    color: #f44336;
+    border: 1px solid #f44336;
+  }
+  
+  /* Consultation reason */
+  .consultation-reason {
+    margin-bottom: 20px;
+  }
+  
+  .consultation-reason h4 {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  .consultation-reason p {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  /* Chat section */
+  .chat-section {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  .chat-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px;
+    background: #fff;
+    border-bottom: 1px solid #e9ecef;
+    border-radius: 12px 12px 0 0;
+    font-weight: 600;
+    color: #2c3e50;
+  }
+  
+  .chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .chat-messages::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .chat-messages::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+  }
+  
+  .chat-messages::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+  }
+  
+  .chat-messages::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+  }
+  
+  .chat-bubble {
+    max-width: 60%;
+    padding: 8px 12px;
+    border-radius: 12px;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .chat-bubble.sent {
+    align-self: flex-end;
+    background: #007bff;
+    color: white;
+    border-bottom-right-radius: 4px;
+  }
+  
+  .chat-bubble.received {
+    align-self: flex-start;
+    background: white;
+    color: #2c3e50;
+    border-bottom-left-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .message-header {
+    margin-bottom: 2px;
+  }
+  
+  .message-sender {
+    font-size: 0.75rem;
+    font-weight: 600;
+    opacity: 0.8;
+  }
+  
+  .message-text {
+    margin: 0;
+    line-height: 1.3;
+    word-wrap: break-word;
+    font-size: 0.9rem;
+  }
+  
+  .message-time {
+    font-size: 0.65rem;
+    opacity: 0.7;
+    margin-top: 2px;
+    display: block;
+  }
+  
+  .chat-input {
+    display: flex;
+    gap: 12px;
+    padding: 16px;
+    background: white;
+    border-top: 1px solid #e9ecef;
+    border-radius: 0 0 12px 12px;
+  }
+  
+  .chat-input input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid #e9ecef;
+    border-radius: 24px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease;
+  }
+  
+  .chat-input input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+  }
+  
+  .btn-send {
+    padding: 12px 24px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 24px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .btn-send:hover {
+    background: #0056b3;
+  }
+  
+  .btn-send:active {
+    transform: scale(0.98);
+  }
+  
+  .no-messages {
+    text-align: center;
+    color: #6c757d;
+    padding: 20px;
+    font-style: italic;
+  }
+  
+  /* Loading animation for messages */
+  .loading-messages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #6c757d;
+  }
+  
+  .loading-messages::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 2px solid #e9ecef;
+    border-top-color: #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Error message styling */
+  .error-message {
+    color: #dc3545;
+    background: #f8d7da;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 10px 0;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  .consultation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .header-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .appointment-time {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 8px;
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .appointment-status {
+    padding: 6px 12px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+  }
+  
+  .status {
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  
+  .medical-notes {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border-left: 4px solid #4a90e2;
+  }
+  
+  .counterparty-name {
+    margin: 0 0 5px;
+  }
+  
+  .no-consultations {
+    color: #666;
+    text-align: center;
+    padding: 20px;
+  }
+  
