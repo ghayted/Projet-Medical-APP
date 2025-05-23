@@ -1,0 +1,14 @@
+# Étape 1 : Image de base Java 23 légère
+FROM eclipse-temurin:23-jdk-alpine
+
+# Définir le dossier de travail dans le conteneur
+WORKDIR /app
+
+# Copier le JAR compilé depuis Maven (nom générique ou précis)
+COPY target/*.jar app.jar
+
+# Exposer le port d'écoute de Spring Boot
+EXPOSE 8080
+
+# Démarrer l'application
+ENTRYPOINT ["java", "-jar", "app.jar"]
